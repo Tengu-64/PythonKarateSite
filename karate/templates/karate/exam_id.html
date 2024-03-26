@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    {% for color in blt %}
+    <title>{{color.color}}</title>
+    {% endfor %}
+    	<link rel="stylesheet" type="text/css" href="{% static 'karate/css/style.css' %}" />
+</head>
+<body>
+<header>
+		<div class="h">
+	<img src="https://sites.google.com/site/sevkarate/_/rsrc/1431635103468/o-stile-kiokusinkaj-karate/200px-Kyokushinkai.svg.png" class="logo">
+
+	<div class="fon">
+				<h1>Киокушинкай каратэ</h1>
+		<h4>Техника, система поясов и многое другое</h4>
+	</div>
+
+	<nav id="menu">
+	</div>
+	<hr style="margin-top: 10px;">
+	<nav id="menu">
+	    <span class="menu"> <a style='color:black' href="{% url 'home' %}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">на главную</a></span>
+		<span class="menu"><a style='color:black' href="{% url 'belt' %}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">система поясов</a></span>
+		<span class="menu"> <a style='color:black' href="{% url 'exam' %}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">нормативы для экзаменов</a></span>
+		<span class="menu"> <a style='color:black' href="{% url 'power'%}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">проверка силы</a></span>
+		<span class="menu"><a style='color:black' href="{% url 'dictionary'%}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">словарь каратэ</a></span>
+	</nav>
+</header>
+
+
+<div class='text' style="font-size:larger;">
+
+
+{% for i in blt %}
+    <h2 style="text-align:center"> экзамен на {{i.color}} ({{i.kyu}} кю)</h2><br>
+{% endfor %}
+
+    {% for exam in info%}
+    <div >
+        <p>Цуки (удары): {{exam.hits}}</p>
+    </div>
+    <hr>
+
+    <div>
+        <p>Уке Вадза (блоки): {{exam.blocks}}</p>
+    </div>
+    <hr>
+
+    <div>
+        <p>Ката: {{exam.kata}}</p>
+    </div>
+    <hr>
+    <div>
+        <p>Отжимания на Сейкен:{{exam.push_ups}} </p>
+        <p>Приседания: {{exam.sit_ups}}</p>
+        <p>Пресс: {{exam.press}}</p>
+        <p>Кумитэ (поединок): {{exam.kumite}}</p>
+    </div>
+
+
+
+    <div style= "margin-left:20% ;margin-top:50px">
+        <img src="{{exam.kata_img}}">
+    </div>
+
+    {% endfor %}
+
+</div>
+</body>
+</html>

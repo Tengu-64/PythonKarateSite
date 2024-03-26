@@ -1,0 +1,48 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>проверка силы</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'karate/css/style.css' %}" />
+</head>
+<body>
+<header>
+		<div class="h">
+	<img src="https://sites.google.com/site/sevkarate/_/rsrc/1431635103468/o-stile-kiokusinkaj-karate/200px-Kyokushinkai.svg.png" class="logo">
+
+	<div class="fon">
+				<h1>Киокушинкай каратэ</h1>
+		<h4>Техника, система поясов и многое другое</h4>
+	</div>
+
+	<nav id="menu">
+	</div>
+	<hr style="margin-top: 10px;">
+	<nav id="menu">
+	    <span class="menu"> <a style='color:black' href="{% url 'home' %}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">на главную</a></span>
+		<span class="menu"><a style='color:black' href="{% url 'belt' %}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">система поясов</a></span>
+		<span class="menu"> <a style='color:black' href="{% url 'exam' %}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">нормативы для экзаменов</a></span>
+		<span class="menu"> <a style='color:black' href="{% url 'power'%}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">проверка силы</a></span>
+		<span class="menu"><a style='color:black' href="{% url 'dictionary'%}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">словарь каратэ</a></span>
+	</nav>
+</header>
+
+<div class='text' style="font-size:larger;">
+    <h2 style='text-align:center'>Проверка уровня</h2>
+    <div style='line-height:1.5'>
+        <p>Чтобы соответствовать определенному поясу нужно не только знать технику, но и иметь небольшую физическую подготовку. Введите количество приседаний и отжиманий которые вы можете выполнить за раз, чтобы узнать какому поясу вы соответсвуете по силе.</p>
+        <form action="{% url 'power' %}" method='get' name='form' style='margin-left:35%; margin-top:50px;'>
+            <label>приседания:</label>
+            <input type='number' name='situp'><br>
+            <label>отжимания:</label>
+            <input type='number' name='pushup'><br>
+            <input type='submit' name='submit' value='узнать свой уровень'>
+        </form>
+    </div>
+</div>
+<!-- test-->
+
+<!--end test-->
+</body>
+</html>

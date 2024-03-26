@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>система поясов</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'karate/css/style.css' %}" />
+</head>
+<body>
+
+<header>
+		<div class="h">
+	<img src="https://sites.google.com/site/sevkarate/_/rsrc/1431635103468/o-stile-kiokusinkaj-karate/200px-Kyokushinkai.svg.png" class="logo">
+
+	<div class="fon">
+				<h1>Киокушинкай каратэ</h1>
+		<h4>Техника, система поясов и многое другое</h4>
+	</div>
+
+	<nav id="menu">
+	</div>
+	<hr style="margin-top: 10px;">
+	<nav id="menu">
+	    <span class="menu"> <a style='color:black' href="{% url 'home' %}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">на главную</a></span>
+		<span class="menu"><a style='color:black' href="{% url 'belt' %}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">система поясов</a></span>
+		<span class="menu"> <a style='color:black' href="{% url 'exam' %}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">нормативы для экзаменов</a></span>
+		<span class="menu"> <a style='color:black' href="{% url 'power'%}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">проверка силы</a></span>
+		<span class="menu"><a style='color:black' href="{% url 'dictionary'%}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">словарь каратэ</a></span>
+	</nav>
+</header>
+<div class='text' style="font-size:larger;">
+        <h2 style='text-align:center'>Система поясов</h2>
+        <p>Как в большинстве воинских искусств Японии, в Кёкусинкай различают ученические (кю) и мастерские (даны) степени. В Кёкусинкай десять кю (10-й кю является самым младшим, 1-й — старшим) и десять данов (1-й дан — младший, 10-й — старший). Каждой степени соответствует пояс определённого цвета с одной или несколькими поперечными полосками (либо без таковых), нашитыми на правый конец пояса. Традиционно, данам соответствует чёрный пояс. На чёрный пояс нашиваются жёлтые (золотые) полоски, число которых соответствует дану (с первого по девятый). Десятому дану соответствует чёрный пояс с десятью полосками или красный пояс (в зависимости от правил Федерации).</p>
+        <p>Система цветности ученических поясов (кю) значительно отличается от системы цветности поясов в других боевых искусствах и имеет более глубокое значение, чем простой переход от светлого цвета к более тёмному при увеличении степени. Цвета ученических поясов объединены в пять групп, имеющих один цвет, причём на пояс, соответствующий более старшему кю, нашивается полоска цвета более старшей группы (исключение — пояс 1-го кю имеет жёлтую полоску, хотя иногда можно увидеть и чёрную). Ниже приводится система цветности ученических поясов с описанием смысла цвета.</p>
+    <p>Цвет поясов, соответствующих 10 и 9 кю в различных организациях может быть разным. В организациях, преимущественно развившихся из IKO, он оранженвый, в организациях, преимущественно развившихся из IFK, — белый.</p>
+    <table border="1">
+        {% for i in info %}
+	<tr>
+		<td> {{i.color}} ({{i.kyu}} кю) </td>
+		<td><img src="{{i.belt_img}}"></td>
+		<td>{{i.about_belt}}</td>
+	</tr>
+		{% endfor %}
+    </table>
+        <p>Одним из высших достижений и самым сложным экзаменом в Кёкусинкай считается прохождение теста 100 боёв — хякунин-кумитэ.</p>
+    </div>
+</body>
+</html>

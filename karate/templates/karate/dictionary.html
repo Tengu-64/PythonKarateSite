@@ -1,0 +1,43 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf8">
+<title>словарь киокушинкай</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'karate/css/style.css' %}" />
+</head>
+<body>
+	<header>
+		<div class="h">
+	<img src="https://sites.google.com/site/sevkarate/_/rsrc/1431635103468/o-stile-kiokusinkaj-karate/200px-Kyokushinkai.svg.png" class="logo">
+
+	<div class="fon">
+				<h1>Киокушинкай каратэ</h1>
+		<h4>Техника, система поясов и многое другое</h4>
+	</div>
+
+	<nav id="menu">
+	</div>
+	<hr style="margin-top: 10px;">
+	<nav id="menu">
+	    <span class="menu"> <a style='color:black' href="{% url 'home' %}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">на главную</a></span>
+		<span class="menu"><a style='color:black' href="{% url 'belt' %}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">система поясов</a></span>
+		<span class="menu"> <a style='color:black' href="{% url 'exam' %}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">нормативы для экзаменов</a></span>
+		<span class="menu"> <a style='color:black' href="{% url 'power'%}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">проверка силы</a></span>
+		<span class="menu"><a style='color:black' href="{% url 'dictionary'%}" onmouseover="this.style.color = 'blue'" onmouseout="this.style.color = 'black'">словарь каратэ</a></span>
+	</nav>
+</header>
+
+<div class='text' style="font-size:larger;">
+
+    <h2 style='text-align:center'>Словарь терминов</h2>
+    <div style='line-height:1.5'>
+
+		{% for wrd in words %}
+	<p>{{wrd.name}} - {{wrd.translate}}</p>
+		{% endfor %}
+
+	</div>
+</div>
+</body>
+</html>

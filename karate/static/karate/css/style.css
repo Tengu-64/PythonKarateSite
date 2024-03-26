@@ -1,0 +1,81 @@
+@font-face{
+    font-family:tf ;
+    src: url('18926.ttf');
+}
+
+header{
+	font-family:tf;
+	background-color: rgb(187, 133, 75);
+	border-radius: 15px;
+	margin-bottom: 15px;
+}
+.logo{
+	width: 100px;
+	height: 150px;
+}
+
+.h{
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+#menu{
+    display: flex;
+    flex-wrap: nowrap;
+	font-size: large;
+
+}
+.menu{
+    color:black;
+    text-align: center;
+    width: 17%;
+    height: 40px;
+	text-decoration: none;
+	display: block;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+a{
+	text-decoration: none;
+	display: block;
+}
+
+
+.sidebar {
+	margin: 0;
+	padding: 0;
+	width: 200px;
+	background-color: rgb(187, 133, 75);
+	border-radius: 15px;
+	position: fixed;
+	height: 100%;
+	overflow: auto;
+  }
+
+  .sidebar a {
+	display: block;
+	color: black;
+	padding: 16px;
+	text-decoration: none;
+  }
+
+  div.content {
+	margin-left: 200px;
+	padding: 1px 16px;
+	height: 1000px;
+  }
+
+  .text{
+      margin-top:50px;
+      margin-left:10%;
+      margin-right:10%;
+      margin-bottom:5%;
+  }
+ .info{
+    margin-top:50px;
+    margin-bottom:50px;
+ }
+ .test{
+ color:green;
+ }
